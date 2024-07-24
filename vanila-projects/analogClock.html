@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analog Clock with One-Sided Pointers</title>
+  <style>
+    #clock-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    #clock {
+      width: 300px;
+      height: 300px;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    #clock .tick {
+      position: absolute;
+      left: 50%;
+      top: 10px;
+      width: 2px;
+      height: 20px;
+      background-color: #333;
+      transform-origin: bottom center;
+    }
+
+    #clock .hand {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform-origin: bottom center;
+      background-color: #333;
+    }
+
+    #clock .hour {
+      width: 8px;
+      height: 80px;
+      margin-top: -80px;
+      margin-left: -4px;
+      border-radius: 4px;
+    }
+
+    #clock .minute {
+      width: 6px;
+      height: 100px;
+      margin-top: -100px;
+      margin-left: -3px;
+      border-radius: 3px;
+    }
+
+    #clock .second {
+      width: 4px;
+      height: 120px;
+      margin-top: -120px;
+      margin-left: -2px;
+      background-color: #e74c3c;
+      border-radius: 2px;
+    }
+
+    #clock .center {
+      width: 20px;
+      height: 20px;
+      background-color: #333;
+      border-radius: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #clock .number {
+      position: absolute;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    #clock .number:nth-child(1) {
+      top: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #clock .number:nth-child(2) {
+      top: 100px;
+      right: 40px;
+    }
+
+    #clock .number:nth-child(3) {
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    #clock .number:nth-child(4) {
+      top: 100px;
+      left: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock-container">
+    <div id="clock">
+      <div class="hand hour"></div>
+      <div class="hand minute"></div>
+      <div class="hand second"></div>
+      <div class="center"></div>
+    </div>
+  </div>
+
+  <script>
+    function updateClock() {
+      var now = new Date();
+      var hour = now.getHours();
+      var minute = now.getMinutes();
+      var second = now.getSeconds();
+
+      var hourDegree = (hour % 12) * 30 + (minute / 60) * 30;
+      var minuteDegree = minute * 6;
+      var secondDegree = second * 6;
+
+      document.querySelector('.hour').style.transform = `rotate(${hourDegree}deg)`;
+      document.querySelector('.minute').style.transform = `rotate(${minuteDegree}deg)`;
+      document.querySelector('.second').style.transform = `rotate(${secondDegree}deg)`;
+    }
+
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>

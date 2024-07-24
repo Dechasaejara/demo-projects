@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Effects</title>
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .effect-card {
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      opacity: 0;
+      /* background-image: url("https://picsum.photos/id/237/300/200"); */
+      animation: fade-in 1s ease-in-out forwards;
+    }
+
+    /* Hover Effect */
+    .effect-card.hover-effect {
+      transition: all 0.3s ease;
+    }
+
+    .effect-card.hover-effect:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Fade In/Out Effect */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Slide Effect */
+    .effect-card.slide-in {
+      animation: slide-in 0.5s ease-in-out forwards;
+    }
+
+    @keyframes slide-in {
+      0% {
+        transform: translateX(-100%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* Zoom Effect */
+    .effect-card.zoom-in {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .effect-card.zoom-in:hover {
+      transform: scale(1.2);
+    }
+
+    /* Rotate Effect */
+    .effect-card.rotate {
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .effect-card.rotate:hover {
+      transform: rotate(45deg);
+    }
+
+    /* Box Shadow Effect */
+    .effect-card.box-shadow {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    /* Text Shadow Effect */
+    .effect-card.text-shadow {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Gradient Effect */
+    .effect-card.gradient {
+      background-image: linear-gradient(to right, #ff6b6b, #ffa500);
+    }
+
+    /* Blur Effect */
+    .effect-card.blur {
+      filter: blur(5px);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.blur:hover {
+      filter: blur(0);
+    }
+
+    /* Sepia Effect */
+    .effect-card.sepia {
+      filter: sepia(100%);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.sepia:hover {
+      filter: sepia(0);
+    }
+
+    /* Grayscale Effect */
+    .effect-card.grayscale {
+      filter: grayscale(100%);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.grayscale:hover {
+      filter: grayscale(0);
+    }
+
+    /* Invert Effect */
+    .effect-card.invert {
+      filter: invert(100%);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.invert:hover {
+      filter: invert(0);
+    }
+
+    /* Hue Rotate Effect */
+    .effect-card.hue-rotate {
+      filter: hue-rotate(90deg);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.hue-rotate:hover {
+      filter: hue-rotate(0deg);
+    }
+
+    /* Saturate Effect */
+    .effect-card.saturate {
+      filter: saturate(5);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.saturate:hover {
+      filter: saturate(1);
+    }
+
+    /* Brightness Effect */
+    .effect-card.brightness {
+      filter: brightness(0.5);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.brightness:hover {
+      filter: brightness(1);
+    }
+
+    /* Contrast Effect */
+    .effect-card.contrast {
+      filter: contrast(2);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.contrast:hover {
+      filter: contrast(1);
+    }
+
+    /* Drop Shadow Effect */
+    .effect-card.drop-shadow {
+      filter: drop-shadow(8px 8px 10px gray);
+      transition: filter 0.3s ease-in-out;
+    }
+
+    .effect-card.drop-shadow:hover {
+      filter: drop-shadow(0 0 0 gray);
+    }
+
+    /* Opacity Effect */
+    .effect-card.opacity {
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .effect-card.opacity:hover {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Effects</h1>
+  <div class="container">
+    <div class="effect-card hover-effect">
+      <h3>1. Hover Effect</h3>
+      <p>This effect changes the appearance of an element when the user hovers over it.</p>
+    </div>
+    <div class="effect-card fade-in">
+      <h3>2. Fade In/Out Effect</h3>
+      <p>This effect gradually fades an element in or out.</p>
+    </div>
+    <div class="effect-card slide-in">
+      <h3>3. Slide Effect</h3>
+      <p>This effect slides an element in or out of view.</p>
+    </div>
+    <div class="effect-card zoom-in">
+      <h3>4. Zoom Effect</h3>
+      <p>This effect scales an element up or down.</p>
+    </div>
+    <div class="effect-card rotate">
+      <h3>5. Rotate Effect</h3>
+      <p>This effect rotates an element.</p>
+    </div>
+    <div class="effect-card box-shadow">
+      <h3>6. Box Shadow Effect</h3>
+      <p>This effect adds a shadow around an element.</p>
+    </div>
+    <div class="effect-card text-shadow">
+      <h3>7. Text Shadow Effect</h3>
+      <p>This effect adds a shadow to text.</p>
+    </div>
+    <div class="effect-card gradient">
+      <h3>8. Gradient Effect</h3>
+      <p>This effect creates a gradient background.</p>
+    </div>
+    <div class="effect-card blur">
+      <h3>9. Blur Effect</h3>
+      <p>This effect applies a blur to an element.</p>
+    </div>
+    <div class="effect-card sepia">
+      <h3>10. Sepia Effect</h3>
+      <p>This effect applies a sepia tone to an element.</p>
+    </div>
+    <div class="effect-card grayscale">
+      <h3>11. Grayscale Effect</h3>
+      <p>This effect converts an element to grayscale.</p>
+    </div>
+    <div class="effect-card invert">
+      <h3>12. Invert Effect</h3>
+      <p>This effect inverts the colors of an element.</p>
+    </div>
+    <div class="effect-card hue-rotate">
+      <h3>13. Hue Rotate Effect</h3>
+      <p>This effect applies a hue rotation to an element.</p>
+    </div>
+    <div class="effect-card saturate">
+      <h3>14. Saturate Effect</h3>
+      <p>This effect adjusts the saturation of an element.</p>
+    </div>
+    <div class="effect-card brightness">
+      <h3>15. Brightness Effect</h3>
+      <p>This effect adjusts the brightness of an element.</p>
+    </div>
+    <div class="effect-card contrast">
+      <h3>16. Contrast Effect</h3>
+      <p>This effect adjusts the contrast of an element.</p>
+    </div>
+    <div class="effect-card drop-shadow">
+      <h3>17. Drop Shadow Effect</h3>
+      <p>This effect adds a drop shadow to an element.</p>
+    </div>
+    <div class="effect-card opacity">
+      <h3>18. Opacity Effect</h3>
+      <p>This effect adjusts the opacity of an element.</p>
+    </div>
+  </div>
+</body>
+</html>

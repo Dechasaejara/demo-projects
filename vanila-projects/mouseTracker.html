@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mouse Flowing Circles at Different Intervals</title>
+    <style>
+        .circle {
+            position: absolute;
+            background-color: #a82424;
+            border-radius: 50%;
+            opacity: 0.5;
+            transition: transform 0.2s ease;
+        }
+
+        .circle1 {
+            width: 10px;
+            height: 10px;
+            background: #e00000;
+            opacity: 0.9;
+        }
+
+        .circle2 {
+            width: 20px;
+            height: 20px;
+        }
+
+        .circle3 {
+            width: 30px;
+            height: 30px;
+        }
+
+        .circle4 {
+            width: 40px;
+            height: 40px;
+        }
+
+        .circle5 {
+            width: 50px;
+            height: 50px;
+        }
+
+        .circle6 {
+            width: 60px;
+            height: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- win + . -->
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+    <div class="circle circle3"></div>
+    <div class="circle circle4"></div>
+    <div class="circle circle5"></div>
+    <div class="circle circle6"></div>
+
+    <script>
+        const circles = document.querySelectorAll('.circle');
+        document.addEventListener('mousemove', (event) => {
+            circles.forEach((circle, index) => {
+                setTimeout(() => {
+                    circle.style.transform = `translate(${event.clientX - (circle.offsetWidth / 11)}px, ${event.clientY - (circle.offsetHeight / -16)}px)`;
+                    circle.style.zIndex = circles.length - index;
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+
+</html>

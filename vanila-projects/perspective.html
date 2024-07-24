@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Racing Game</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      overflow: hidden;
+    }
+
+    #game-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to right, #00b7ff, #00d4ff, #00b7ff);
+      background-size: 200% 200%;
+      animation: road-scroll 5s linear infinite;
+    }
+
+    .car {
+      position: absolute;
+      width: 100px;
+      height: 200px;
+      background: linear-gradient(to right, #ff0000, #ff4d4d, #ff0000);
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 50%;
+      bottom: 50px;
+      transform: translateX(-50%);
+    }
+
+    @keyframes road-scroll {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body>
+  <div id="game-container">
+    <div class="car" id="player-car"></div>
+  </div>
+
+  <script>
+    const playerCar = document.getElementById('player-car');
+    const gameContainer = document.getElementById('game-container');
+
+    let playerCarPosition = 50; // Initial position of the player car
+
+    function movePlayerCar(direction) {
+      const containerWidth = gameContainer.offsetWidth;
+      const carWidth = playerCar.offsetWidth;
+
+      if (direction === 'left' && playerCarPosition > carWidth / 2) {
+        playerCarPosition -= 20;
+      } else if (direction === 'right' && playerCarPosition < containerWidth - carWidth / 2) {
+        playerCarPosition += 20;
+      }
+
+      playerCar.style.left = `${playerCarPosition}px`;
+    }
+
+    document.addEventListener('keydown', (event) => {
+      switch (event.key) {
+        case 'ArrowLeft':
+          movePlayerCar('left');
+          break;
+        case 'ArrowRight':
+          movePlayerCar('right');
+          break;
+      }
+    });
+  </script>
+</body>
+</html>
