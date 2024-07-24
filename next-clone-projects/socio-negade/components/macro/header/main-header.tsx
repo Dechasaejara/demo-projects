@@ -19,7 +19,7 @@ export const NavBar = ({ }: NavBarProps) => {
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className="text-orange-500">Home</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className="text-orange-500 font-semibold">Home</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="h-60 w-[900px] bg-orange-500 p-5">
 
@@ -28,7 +28,7 @@ export const NavBar = ({ }: NavBarProps) => {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className="text-orange-500">Podcast</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className="text-orange-500 font-semibold">Podcast</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="h-60 w-[900px] bg-orange-300 p-5">
 
@@ -37,7 +37,7 @@ export const NavBar = ({ }: NavBarProps) => {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className="text-orange-500">Shop</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className="text-orange-500 font-semibold">Shop</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="h-60 w-[900px] bg-orange-300 p-5">
 
@@ -46,7 +46,7 @@ export const NavBar = ({ }: NavBarProps) => {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger className="text-orange-500">About</NavigationMenuTrigger>
+                            <NavigationMenuTrigger className="text-orange-500 font-semibold">About</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <div className="h-60 w-[900px] bg-orange-300 p-5">
 
@@ -63,11 +63,12 @@ export const NavBar = ({ }: NavBarProps) => {
             <div className="flex">
                 <Select >
                     <SelectTrigger className="w-fit gap-2">
-                        <SelectValue placeholder="ET (ETB Br)" className="text-black" />
+                        <SelectValue placeholder="US (USD $)" className="text-black" />
                     </SelectTrigger>
                     <SelectContent className="" >
-                        <SelectItem value="light" >ET (ETB Br)</SelectItem>
-                        <SelectItem value="dark" >DJ (DJF Fdj)</SelectItem>
+                        <SelectItem value="usd" >US (USD $)</SelectItem>
+                        <SelectItem value="etb" >ET (ETB Br)</SelectItem>
+                        <SelectItem value="djf" >DJ (DJF Fdj)</SelectItem>
                     </SelectContent>
                 </Select>
             </div>
